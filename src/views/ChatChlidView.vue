@@ -6,7 +6,7 @@
             <div class="chatroomHome flex items-center justify-center flex-col w-full h-full"
                 v-if="userParams.msgStorage == ''||userParams.msgStorage?.conversation?.length == 0">
                 <div class="flex flex-row justify-center items-center m-5 relative bottom-10">
-                    <img src="@/assets/svg/chatlogo.svg" alt="" width="100" class=" hidden md:block">
+                    <img src="@/assets/svg/chatlogo.svg" alt="" width="40" class=" hidden md:block">
                     <div class="h1 text-3xl md:text-6xl font-bold text-[rgb(38,83,107)] ml-4 dark:text-white">Luvmand Chat</div>
                 </div>
 
@@ -50,7 +50,7 @@
                 <!-- 聊天框 -->
                 <div class="inputField w-full h-16 flex justify-center">
                     <div class=" flex justify-center items-center  border-blue-400 dark:border-white border-2 pr-1.5 pl-1 md:pl-10 rounded-full overflow-hidden">
-                        <svg t="1727347052169" class="icon dark:text-white relative right-2 hidden md:block" viewBox="0 0 1024 1024" style="width: 30; height: 30;" @click="clearData" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="15657" xmlns:xlink="http://www.w3.org/1999/xlink" width="200" height="200"><path d="M505.17 128a73.54 73.54 0 0 1 73.05 66.34l0.34 7v308.92h58c31.41 0 61.18 22 71.07 52.18l1.81 6.59 59.76 296.31A25.6 25.6 0 0 1 744.11 896H266.24a25.6 25.6 0 0 1-25-31l64.53-296.38a74.41 74.41 0 0 1 72.78-58.28h53.22V201.47a73.53 73.53 0 0 1 73.4-73.47z m169.74 528.84l-2.48 0.23h-333.6L298 844.8h62.1v-70a25.6 25.6 0 0 1 50.78-4.6l0.42 4.6v70H599v-22.19a25.6 25.6 0 0 1 50.79-4.6l0.41 4.6v22.19h62.58z m-38.32-95.35h-258a23.18 23.18 0 0 0-22.77 18.08L350 605.85h314.62l-5.24-26.17c-1.59-7.15-8.12-13.81-15.41-16.69l-3.69-1.11z m-109.24-71.71H483v20.48h44.39zM505.17 179.2a22.35 22.35 0 0 0-21.82 18.23l-0.36 4v237.19h44.39V201.39a22.33 22.33 0 0 0-22.21-22.19z" fill="currentColor" p-id="15658"></path></svg>
+                        <svg t="1727347052169" class="icon dark:text-white relative right-2 hidden md:block" viewBox="0 0 1024 1024" style="width: 30; height: 30;" @click="clearData" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="15657" xmlns:xlink="http://www.w3.org/1999/xlink" width="30" height="30"><path d="M505.17 128a73.54 73.54 0 0 1 73.05 66.34l0.34 7v308.92h58c31.41 0 61.18 22 71.07 52.18l1.81 6.59 59.76 296.31A25.6 25.6 0 0 1 744.11 896H266.24a25.6 25.6 0 0 1-25-31l64.53-296.38a74.41 74.41 0 0 1 72.78-58.28h53.22V201.47a73.53 73.53 0 0 1 73.4-73.47z m169.74 528.84l-2.48 0.23h-333.6L298 844.8h62.1v-70a25.6 25.6 0 0 1 50.78-4.6l0.42 4.6v70H599v-22.19a25.6 25.6 0 0 1 50.79-4.6l0.41 4.6v22.19h62.58z m-38.32-95.35h-258a23.18 23.18 0 0 0-22.77 18.08L350 605.85h314.62l-5.24-26.17c-1.59-7.15-8.12-13.81-15.41-16.69l-3.69-1.11z m-109.24-71.71H483v20.48h44.39zM505.17 179.2a22.35 22.35 0 0 0-21.82 18.23l-0.36 4v237.19h44.39V201.39a22.33 22.33 0 0 0-22.21-22.19z" fill="currentColor" p-id="15658"></path></svg>
                         <input name="" id="" v-model="input" class="sm:w-36 md:w-96 h-full bg-white outline-none dark:bg-transparent dark:text-white" @keypress="(key)=> {if(key.key=='Enter'){sendMsgStream()}}" type="text" placeholder="Ask anything..."></input>
                         <div class="w-12 ml-10 h-12 p-2 flex justify-center items-center flex-col  bg-[#1296db] rounded-full">
                             
