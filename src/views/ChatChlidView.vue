@@ -6,7 +6,7 @@
             <div class="chatroomHome flex items-center justify-center flex-col w-full h-full"
                 v-if="userParams.msgStorage == ''||userParams.msgStorage?.conversation?.length == 0">
                 <div class="flex flex-row justify-center items-center m-5 relative bottom-10">
-                    <img src="@/assets/svg/chatlogo.svg" alt="" width="40" class=" hidden md:block">
+                    <img src="@/assets/svg/chatlogo.svg" alt="" width="100" class=" hidden md:block">
                     <div class="h1 text-3xl md:text-6xl font-bold text-[rgb(38,83,107)] ml-4 dark:text-white">Luvmand Chat</div>
                 </div>
 
