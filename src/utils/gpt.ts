@@ -47,7 +47,7 @@ export async function chatgptRequestWithAPI(userContent:chatElement,localAPI:api
     let conversationHistory:Message[] = userContent.conversation.map(item => item.massages)
     if(localAPI.useDefault)
     {
-        console.log("default api")
+        // console.log("default api")
         const chatCompletions = await clientDefault.chat.completions.create({
             messages:conversationHistory,
             model:'gpt-3.5-turbo'
@@ -56,7 +56,7 @@ export async function chatgptRequestWithAPI(userContent:chatElement,localAPI:api
         return chatCompletions;
     }
     else{
-        console.log("local api")
+        // console.log("local api")
         const clientUser = new OpenAI({
             apiKey:localAPI.apiKey,
             baseURL:localAPI.baseURL,
@@ -77,7 +77,7 @@ export async function chatgptRequestStreammode(userContent:chatElement,localAPI:
     let conversationHistory:Message[] = userContent.conversation.map(item => item.massages)
     if(localAPI.useDefault)
     {
-        console.log("default api")
+        // console.log("default api")
         return clientDefault.chat.completions.create({
             messages:conversationHistory,
             model:'gpt-3.5-turbo',
@@ -85,7 +85,7 @@ export async function chatgptRequestStreammode(userContent:chatElement,localAPI:
         });
     }
     else{
-        console.log("local api")
+        // console.log("local api")
         const clientUser = new OpenAI({
             apiKey:localAPI.apiKey,
             baseURL:localAPI.baseURL,

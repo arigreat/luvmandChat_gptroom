@@ -143,12 +143,16 @@ async function sendMsgStream(){
         userParams.msgStorage.conversation.push({time:receivedTime,massages:{role:"assistant",content:''}})
 
         // 超时处理
-        const timeoutMaxtime = 15000
+        let isFinished = false
+        const timeoutMaxtime = 30000
         const timeout = new Promise((resolve,reject)=>{setTimeout(() => {
             reject("timeout")
         }, timeoutMaxtime);}).catch((err)=>{
-            console.log(err)
-            userParams.msgStorage.conversation[userParams.msgStorage.conversation.length-1].massages.content +="[time out, please try later]" 
+            if(!isFinished)
+            {
+                console.log(err)
+                userParams.msgStorage.conversation[userParams.msgStorage.conversation.length-1].massages.content +="[time out, please try later]" 
+            }
             return
         })
 
@@ -160,6 +164,10 @@ async function sendMsgStream(){
             {
                 contentTotal+=chunk.choices[0]?.delta?.content || ""
                 userParams.msgStorage.conversation[userParams.msgStorage.conversation.length-1].massages.content = contentTotal
+                if(chunk.choices[0]?.finish_reason == "stop")
+                {
+                    isFinished = true
+                }
             }
         }
     }catch(err){
