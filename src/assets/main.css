@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;  
+
+@layer utilities{
+    .scroll-black{
+        scrollbar-color: rgba(255,255,255, 0.5) transparent;
+    }
+    
+    .scroll-white{
+        scrollbar-color: rgba(0,0,0, 0.5) transparent;
+    }
+
+
+}
+
+/* @layer base{
+    .homePagebgCloud{
+        --bgcolor:grey;
+        width: 15rem;
+        height: 15rem;
+        border-radius: 100%;
+        position: relative;
+        background-color: var(--bgcolor);
+        box-shadow: -8rem 1rem var(--bgcolor),8rem 4rem var(--bgcolor),16rem 2rem var(--bgcolor),24rem 3rem var(--bgcolor),34rem 5rem var(--bgcolor),41rem 4rem var(--bgcolor),50rem 3rem var(--bgcolor),
+        59rem 2rem var(--bgcolor),67rem 7rem var(--bgcolor),75rem 3rem var(--bgcolor),83rem 4rem var(--bgcolor),92rem 2rem var(--bgcolor),100rem 3rem var(--bgcolor),110rem -1rem var(--bgcolor);
+    }
+} */
