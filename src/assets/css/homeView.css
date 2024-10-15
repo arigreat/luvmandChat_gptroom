@@ -1,0 +1,316 @@
+:root{
+    --transformOldX:0;
+    --transformNewX:0;
+    --userListMoveTime:60s;
+}
+
+.homePagebgCloud1{
+    --bgcolor:grey;
+    width: 15rem;
+    height: 15rem;
+    border-radius: 100%;
+    position: relative;
+    /* top: 10rem; */
+    background-color: var(--bgcolor);
+    box-shadow: -16rem 1.5rem var(--bgcolor),-8rem 2rem var(--bgcolor),8rem 2.4rem var(--bgcolor),17rem 2rem var(--bgcolor),24rem 2.4rem var(--bgcolor),34rem 2.5rem var(--bgcolor),41rem 4rem var(--bgcolor),50rem 3rem var(--bgcolor),
+    59rem 2.4rem var(--bgcolor),67rem 6rem var(--bgcolor),75rem 2rem var(--bgcolor),83rem 4rem var(--bgcolor),92rem 2rem var(--bgcolor),100rem 3rem var(--bgcolor),110rem -1rem var(--bgcolor);
+}
+.homePagebgCloud2{
+    --bgcolor:grey;
+    width: 15rem;
+    height: 15rem;
+    border-radius: 100%;
+    position: relative;
+    /* top: 10rem; */
+    background-color: var(--bgcolor);
+    box-shadow: -15rem 5rem var(--bgcolor),-9rem 4rem var(--bgcolor),8rem 3rem var(--bgcolor),16rem 2rem var(--bgcolor),24rem 2rem var(--bgcolor),32rem 3rem var(--bgcolor),40rem 2rem var(--bgcolor),50rem 2rem var(--bgcolor),
+    58rem 3rem var(--bgcolor),67rem 1rem var(--bgcolor),75rem 3.1rem var(--bgcolor),84rem 2.4rem var(--bgcolor),92rem 2rem var(--bgcolor),100rem -0.2rem var(--bgcolor),110rem -2rem var(--bgcolor);
+}
+
+
+.Carousel{
+    position: relative;
+    bottom: 2rem;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    width: 80%;
+    height: 38rem;
+    overflow: hidden;
+
+    .imgBoxes{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        flex-direction: row;
+        transform: translateX(var(--transformOldX));
+        .imgBox{
+            max-width: 100rem;
+            width: 100%;
+            height: 100%;
+            /* position: relative; */
+            flex-shrink: 0;
+            top: 0;
+            left: 0;
+            box-shadow: none;
+            .imgBoxButton:hover{
+                animation: imgButtonOpacity 0.2s forwards;
+            }
+        }
+
+        .imgBox:nth-of-type(1){
+            background-image: url('/img/cover1.jpeg');
+            background-position: 0rem -9rem;
+        }
+        .imgBox:nth-of-type(2){
+            background-image: url('/img/cover2.jpeg');
+            background-position: 0rem -20rem;
+        }
+        .imgBox:nth-of-type(3){
+            background-image: url('/img/cover3.jpeg');
+            background-position: 0rem -2rem;
+        }
+        .imgBox:nth-of-type(4){
+            background-image: url('/img/cover4.jpeg');
+            background-position: 0rem -20rem;
+        }
+        .imgBox:nth-of-type(5){
+            background-image: url('/img/cover1.jpeg');
+            background-position: 0rem -9rem;
+        }
+    }
+}
+@media (max-width: 770px) {
+    .Carousel {
+        width: 90vw;
+        height: 70vh;
+    }
+
+    .imgBoxes {
+        width: 100%;
+        height: auto;
+        flex-shrink:initial ;
+    }
+
+    .imgBox {
+        width: inherit;
+        height: 40rem;
+        overflow: hidden;
+    }
+}
+
+@keyframes imgButtonOpacity {
+    0%{
+        background-color: rgba(255, 255, 255, 0);
+    }
+    100%{
+        background-color: rgba(255, 255, 255, 0.5);
+    }
+}
+@keyframes imgBoxBlur {
+    0%{
+        filter:blur(0px);
+    }
+    100%{
+        filter:blur(2px);
+    }
+}
+
+.CarouselmoveRight{
+    animation: CarouselScrollRight 0.5s forwards ease-in-out;
+}
+@keyframes CarouselScrollRight{
+    0%{
+        transform: translateX(var(--transformOldX));
+    }
+    100%{
+        transform: translateX(var(--transformNewX));
+    }
+}
+
+.CarouselmoveEndless{
+    animation: CarouselScrollEndless 0.01s forwards ease-in-out;
+}
+@keyframes CarouselScrollEndless{
+    0%,100%{
+        transform: translateX(var(--transformOldX));
+    }
+}
+
+
+.transitionArc{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    background-color: white; /* 背景颜色 */
+    border-radius: 100% 100% 0 0;
+    transform: translateX(0); /* 向左平移50%以居中 */
+}
+
+/* 用户滚动条 */
+.userListUser1{
+    animation: userListMove1 infinite var(--userListMoveTime) linear;
+}
+.userListUser2{
+    animation: userListMove2 infinite var(--userListMoveTime) linear;
+    animation-delay: calc(var(--userListMoveTime)/2*-1);
+}
+@keyframes userListMove1 {
+    from{
+        transform: translateX(1000%);
+    }
+    to{
+        transform: translateX(-1000%);
+    }
+}
+
+@keyframes userListMove2 {
+    from{
+        transform: translateX(0%);
+    }
+    to{
+        transform: translateX(-2000%);
+    }
+}
+
+.navigateHidden{
+    animation: navigateHide 0.25s forwards;
+    transform: translateY(0);
+}
+.navigateShowup{
+    animation: navigateShow 0.25s forwards;
+    transform: translateY(-100%);
+}
+@keyframes navigateHide {
+    0%{
+        transform: translateY(0);
+    }
+    100%{
+        transform: translateY(-100%);
+    }
+}
+@keyframes navigateShow {
+    100%{
+        transform: translateY(0);
+    }
+    0%{
+        transform: translateY(-100%);
+    }
+}
+
+.star{
+    --animationTime:10s;
+    width: 260px;
+    height: 260px;
+    position: fixed;
+    z-index: 1;
+    background-image: url('/img/star.png');
+    scale: 0.1;
+    animation: staring var(--animationTime) forwards linear;
+    /* transform: rotate(100deg); */
+}
+@keyframes staring {
+    0%,100%{
+        opacity: 0;
+    }
+    20%,80%{
+        opacity: 1;
+    }    
+}
+.comment{
+    perspective: 2000px;
+    transform-origin: center;
+    position: relative;
+}
+.commentCards{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    left: 2rem;
+    position: relative;
+    width: 100%;
+    height: 100%;
+
+    transform-origin: center;
+    transform-style: preserve-3d;
+    transform: rotateY(0deg) translateZ(-10vw);
+    animation: cardCarousel 18s infinite  forwards;
+}
+.card{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding:2rem;
+    width: 30rem;
+    height: 20rem;
+    flex-direction: column;
+    position: absolute;
+    transform-origin: center;
+    background-color: white;
+    background-size: cover;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    /* -webkit-box-reflect: ; */
+    /* transform-style: preserve-3d; */
+}
+.card::before{
+    content: '';
+    background-color: aqua;
+    width: 80px;
+}
+.card:nth-of-type(1){
+    
+    transform: rotateY(0deg) translateZ(300px);
+}
+.card:nth-of-type(2){
+    transform: rotateY(120deg) translateZ(300px);
+}
+.card:nth-of-type(3){
+    transform: rotateY(240deg) translateZ(300px);
+}
+
+@keyframes cardCarousel {
+    0%,17.5%{
+        transform: rotateY(0deg) translateZ(100px);
+    }
+    27.5%,45%{
+        transform: rotateY(-120deg) translateZ(100px);
+    }
+    55%,72.5%{
+        transform: rotateY(-240deg) translateZ(100px);
+    }
+    82.5%,100%{
+        transform: rotateY(-360deg) translateZ(100px);
+    }
+}
+
+@media (max-width: 768px) {
+    .commentCards {
+        animation: none;
+        transform: rotateY(0deg) translateZ(0);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .card {
+        min-width: 300px;
+        width: 400px;
+        margin: 20px;
+        padding: 1rem;
+        transform: rotateY(0deg) translateZ(0);
+        position: relative; 
+    }
+    .card:nth-of-type(1){
+        transform: rotateY(0deg) translateZ(0);
+    }
+    .card:nth-of-type(2){
+        transform: rotateY(0deg) translateZ(0);
+    }
+    .card:nth-of-type(3){
+        transform: rotateY(0deg) translateZ(0);
+    }
+}
