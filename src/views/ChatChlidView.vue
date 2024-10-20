@@ -1,7 +1,6 @@
 <template>
     <div class="w-full h-full bg-white dark:bg-[#212121] rounded-md md:rounded-r-md md:rounded-l-none border md:border-l-0 overflow-hidden dark:border-gray-950">
         <!-- 聊天内容 -->
-
         <div class="chatroom w-full h-full pt-3">
             <div class="chatroomHome flex items-center justify-center flex-col w-full h-full"
                 v-if="userParams.msgStorage == ''||userParams.msgStorage?.conversation?.length == 0">

@@ -1,3 +1,11 @@
+焦糖前端招新：OpenJT
+
+项目演示网站（需代理）：[Luvmand Chat (luvmand-chat-gptroom.vercel.app)](https://luvmand-chat-gptroom.vercel.app/)
+
+本项目使用Vue3+Vite+Type Script搭建，样式主要使用Tailwind CSS完成，通过Vercel部署。通过vuerouter将不同题目分配在不同路由中（无法按照题号划分文件请见谅）。
+
+项目笔记位于根目录中的`项目文档.md`
+
 # chatGPT_chatroom
 
 This template should help get you started developing with Vue 3 in Vite.
