@@ -1,0 +1,164 @@
+@use 'sass:color';
+
+// 基础变量设置
+$chat-base-font-size: 1.05em; // 基础字体大小
+$chat-scale-ratio: 1.2;     // 字体缩放比例
+$chat-line-height: 1.6;     // 基础行高
+$chat-color-dark: #202020;  // 主文本颜色
+$chat-color-light: #404040;    // 辅助文本颜色
+$chat-primary-color: #000000; // 主色调
+$chat-spacing-unit: 0.25rem; // 间距单位
+$chat-content-width: 50rem;
+
+.chatmessage {
+  color: $chat-color-dark;
+  font-size: $chat-base-font-size;
+  line-height: $chat-line-height;
+  max-width: $chat-content-width;
+  // padding-bottom: 0;
+  
+  // 段落样式
+  p {
+    margin: $chat-spacing-unit 0 $chat-spacing-unit * 0.5;
+    font-size: $chat-base-font-size;
+    line-height: $chat-line-height;
+  }
+  
+  // 标题层级系统
+  h1 {
+    font-size: $chat-base-font-size * pow($chat-scale-ratio, 3);
+    margin: $chat-spacing-unit * 1.5 0 $chat-spacing-unit * 0.5;
+    font-weight: 600;
+    color: color.scale($chat-color-dark, $lightness: -25%);
+    padding-bottom: $chat-spacing-unit * 0.5;
+  }
+  
+  h2 {
+    font-size: $chat-base-font-size * pow($chat-scale-ratio, 2.5);
+    margin: $chat-spacing-unit * 1.25 0 $chat-spacing-unit * 0.4;
+    font-weight: 600;
+    color: color.scale($chat-color-dark, $lightness: -20%);
+  }
+  
+  h3 {
+    font-size: $chat-base-font-size * pow($chat-scale-ratio, 2); 
+    margin: $chat-spacing-unit * 1.1 0 $chat-spacing-unit * 0.35;
+    font-weight: 600;
+    color: color.scale($chat-color-dark, $lightness: -15%);
+  }
+  
+  h4 {
+    font-size: $chat-base-font-size * pow($chat-scale-ratio, 1.5);
+    margin: $chat-spacing-unit * 0.9 0 $chat-spacing-unit * 0.3;
+    font-weight: 600;
+    color: color.scale($chat-primary-color, $lightness: -10%);
+  }
+  
+  h5 {
+    font-size: $chat-base-font-size * pow($chat-scale-ratio, 1);
+    margin: $chat-spacing-unit * 0.8 0 $chat-spacing-unit * 0.25;
+    font-weight: 600;
+    color: color.scale($chat-color-dark, $lightness: -5%);
+  }
+  
+  h6 {
+    font-size: $chat-base-font-size * pow($chat-scale-ratio, 0.5);
+    margin: $chat-spacing-unit * 0.7 0 $chat-spacing-unit * 0.2;
+    font-weight: 600;
+    color: color.scale($chat-color-dark, $lightness: 0%);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  
+  ul, ol {
+    margin: $chat-spacing-unit * 0 0 $chat-spacing-unit * 0.2;
+    padding-left: $chat-spacing-unit * 4;
+    ul, ol {
+      margin: $chat-spacing-unit * 0 0;
+    }
+  }
+  ul {
+    list-style-type: disc;
+    ul {
+      list-style-type: circle;
+      ul {
+        list-style-type: square;
+      }
+    }
+  }
+  ol {
+    list-style-type: decimal;
+    ol {
+      list-style-type: lower-alpha;
+      ol {
+        list-style-type: lower-roman;
+      }
+    }
+  }
+  li {
+    margin-bottom: $chat-spacing-unit * 0.2;
+    line-height: $chat-line-height * 1;
+    > p {
+      margin: 0;
+    }
+  }
+  
+  // 其他Markdown元素
+  blockquote {
+    border-left: 5px solid color.scale($chat-primary-color,$lightness: 45%);
+    padding: $chat-spacing-unit $chat-spacing-unit * 1.8;
+    margin: $chat-spacing-unit * 0.5 0;
+    background-color: color.scale($chat-primary-color,$lightness: 75%);
+    color: color.scale($chat-primary-color,$lightness: 0%);
+    font-style: italic;
+    
+    p {
+      margin: 0;
+      font-size: $chat-base-font-size * 0.9;
+    }
+  }
+  
+  pre {
+    background-color: #4f4f4f;
+    border-radius: 4px;
+    padding: $chat-spacing-unit * 2 $chat-spacing-unit * 10 $chat-spacing-unit * 2 $chat-spacing-unit * 2;
+    // overflow: auto;
+    // margin: $chat-spacing-unit * 1.5 0;
+  }
+  
+  code {
+    font-family: 'Fira Code', monospace;
+    // background-color: #f0f0f0;
+    padding: 0.1em 0.3em;
+    border-radius: 3px;
+    font-size: $chat-base-font-size * 0.9;
+  }
+  
+  hr {
+    border: 0;
+    height: 20px;
+    // background: $chat-primary-color;
+    margin: $chat-spacing-unit * 1 0;
+  }
+  a {
+    color: $chat-primary-color;
+    text-decoration: none;
+    transition: all 0.2s;
+    &:hover {
+      color: color.scale($chat-primary-color, $lightness: -10%);
+      text-decoration: underline;
+    }
+  }
+  strong {
+    font-weight: 700;
+    color: color.scale($chat-color-dark, $lightness: -10%);
+  }
+  em {
+    font-style: italic;
+  }
+  img {
+    max-width: 100%;
+    border-radius: 4px;
+    margin: $chat-spacing-unit 0;
+  }
+}

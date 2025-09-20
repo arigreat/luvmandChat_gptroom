@@ -1,3 +1,6 @@
+// old verison for gptapi 
+// not in use anymore
+
 import OpenAI from "openai";
 
 const clientDefault = new OpenAI({
@@ -64,7 +67,7 @@ export async function chatgptRequestWithAPI(userContent:chatElement,localAPI:api
         })
         const chatCompletions = await clientUser.chat.completions.create({
             messages:conversationHistory,
-            model:localAPI.model||'gpt-3.5-turbo'
+            model:localAPI.model||'gpt-3.5-turbo',
         });
         conversationHistory.push({role:'assistant',content:chatCompletions.choices[0]?.message?.content||''})
         return chatCompletions;

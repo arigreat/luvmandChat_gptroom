@@ -1,3 +1,7 @@
+项目演示网站（需代理）：[Luvmand Chat (luvmand-chat-gptroom.vercel.app)](https://luvmand-chat-gptroom.vercel.app/)
+
+本项目使用Vue3+Vite+Type Script搭建，样式主要使用Tailwind CSS完成，通过Vercel部署。
+
 # chatGPT_chatroom
 
 This template should help get you started developing with Vue 3 in Vite.
